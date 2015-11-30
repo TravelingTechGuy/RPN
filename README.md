@@ -6,7 +6,7 @@ This app uses the Vorpal REPL environment to simulate an RPN calculator.
 ## Installation
 
 1. Clone the repo
-2. Run `npm install` in the folder
+1. Run `npm install` in the app's folder
 
 ## Running the app
 
@@ -51,5 +51,9 @@ KBye!
 
 ## Error handling
 
-Error handling is rudimentary. Only numbers that can be parsed, operators, and end commands are checked for.
-It may be possible to break this REPL, or send option parameters. But this was built as quick exercise, and not intended for production use (although who uses an RPN calculator in production?).
+Error handling is rudimentary. 
+
+1. Only numbers that can be parsed, operators, and end commands are checked for.
+1. The execution code always checks to see that there are 2 available operands on the stack before calculating:
+If there are none, an error is issued. If there's only one, an error is issued, and it is placed back on stack.
+1. It may be possible to break this REPL, or send option parameters. But this was built as quick exercise, and not intended for production use (although who uses an RPN calculator in production?).
