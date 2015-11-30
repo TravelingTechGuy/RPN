@@ -10,7 +10,7 @@ var exit = function(args, cb) {
 };
 
 //calculate and print out result
-var execute = function(operator) {
+var calculate = function(operator) {
   var operand1 = stack.pop();
   if(typeof operand1 === 'undefined') {
     console.log('You need 2 operands on stack to call an operation');
@@ -55,7 +55,7 @@ var handleInput = function(args, cb) {
       console.log('Input can be either a number, or one of the following operations: +, -, /, *');
       return cb();
     }
-    execute(args);
+    calculate(args);
   }
   else {
     stack.push(number);
@@ -75,7 +75,7 @@ vorpal
   .mode('rpn')
   .description('Start RPN functionality')
   .init(function(args, cb){
-    console.log('Welcome to RPN. Enter numbers or operators. To exit, type `exit`.');
+    console.log('Welcome to RPN. Enter numbers or operators. To exit, type `q` or `exit`.');
     cb();
   })
   .action(handleInput);
