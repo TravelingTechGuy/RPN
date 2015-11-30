@@ -1,7 +1,7 @@
 Reverse Polish Notation calculator
 ==================================
 
-This app uses the Vorpal REPL environment to simulate an RPN calculator.
+This app uses the Vorpal REPL environment to simulate an RPN calculator. It was developed for an interview exercise.
 
 ## Installation
 
@@ -57,3 +57,13 @@ Error handling is rudimentary.
 1. The execution code always checks to see that there are 2 available operands on the stack before calculating:
 If there are none, an error is issued. If there's only one, an error is issued, and it is placed back on stack.
 1. It may be possible to break this REPL, or send option parameters. But this was built as quick exercise, and not intended for production use (although who uses an RPN calculator in production?).
+
+## Future improvements/extensions
+
+1. Support more operators - can be done by removing initial check in `handleInput` and adding a case to the `calculate` function
+1. Support direct handling of tuples ("+ 7 2" => 9) by parsing the args string in `handleInput`
+1. Support full RPN notation in one line ("+ 7 - 2 3" => 6)
+1. Support more than 2 operands per operation (if needed)
+1. Print out entire stack as another command
+1. Allow clearing stack as another command
+1. Allow poping a number as another command
