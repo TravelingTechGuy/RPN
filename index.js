@@ -90,6 +90,7 @@ vorpal
     cb();
   });
 
+//start the REPL
 vorpal
   .delimiter('$')
   .show();
