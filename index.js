@@ -74,11 +74,21 @@ vorpal.find('exit')
 vorpal
   .mode('rpn')
   .description('Start RPN functionality')
-  .init(function(args, cb){
+  .init(function(args, cb) {
     console.log('Welcome to RPN. Enter numbers or operators. To exit, type `q` or `exit`.');
     cb();
   })
   .action(handleInput);
+
+//show contents of stack
+vorpal
+  .command('stack')
+  .alias('list')
+  .description('Dump stack contents')
+  .action(function(args, cb) {
+    console.log(stack);
+    cb();
+  });
 
 vorpal
   .delimiter('$')
